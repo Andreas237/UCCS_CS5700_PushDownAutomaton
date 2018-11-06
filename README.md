@@ -21,6 +21,7 @@ Implements a PDA as a class, which implements `Stack` and `Transition`.
 The stack will be a singly linked list.  Available functions are:
   - `push`  add a value to the stack
   - `pop`   remove a value from the stack
+  - `size`  returns the size of the current stack
   - `topValue`  read the top value from the stack, will call pop
 
 
