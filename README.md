@@ -11,20 +11,28 @@ Read a machine description file, generate the machine, process input strings.
 ## Technical Approach
 
 ### `PDA.h`
-Implements a PDA as a class, which implements `Stack` and `Transition`.
+Implements a PDA as a class.
+  - Set of `states`
+  - Set of `accept states`
+  - Vector `stack`
+  - Map of `Transition` to `in`
+  -- which implements and `Transition`.
   - Reads an machine description file to fill in the machine details
   - Reads input string file to make transitions through the machine
   - Writes accepted strings to _basename.txt_
-  - Writes _basename.log_ with Validity, States, Input Alphabet, Stack Alphabet, Accepted Strings (count)
-
-### `Stack.h`
-The stack will be a singly linked list.  Available functions are:
-  - `push`  add a value to the stack
-  - `pop`   remove a value from the stack
-  - `size`  returns the size of the current stack
-  - `topValue`  read the top value from the stack, will call pop
+  - Writes _basename.log_ with Validity, States, Input Alphabet, Stack Alphabet, Accepted
 
 
 ### `Transition.h`
-Generates the transitions based on *valid* inputs from a machine description file.
-Sets the machine's current state given an input, if the machine is able.
+Transitions composed of `start state`, `input variable`, `stack variable`,
+and `end state`.  Can print itself, generates a transition with constructor.
+
+
+
+
+
+## System Requirements
+
+### Makefile
+Compiler: clang++
+Compiler Compliance: C++ 2014
